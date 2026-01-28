@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Articles | Madibaz Chess Club</title>
+  <title>Madibaz Chess Club</title>
+  <meta name="description" content="Madibaz Chess Club — training, tournaments, and community chess at Nelson Mandela University." />
 
   <style>
     :root{
@@ -25,6 +26,7 @@
       color: var(--text);
       line-height:1.5;
     }
+
     a{ color:inherit; text-decoration:none; }
     .container{ width:min(1000px, 92vw); margin:0 auto; }
 
@@ -41,26 +43,22 @@
       gap:12px;
       flex-wrap:wrap;
     }
+    .brand{ font-weight:800; font-size:18px; }
+    nav{ display:flex; gap:10px; flex-wrap:wrap; }
     nav a{
       padding:8px 12px;
       border-radius:999px;
       background: rgba(255,255,255,.15);
       font-size:14px;
     }
+    nav a:hover{ background: rgba(255,255,255,.25); }
 
     main{ padding:24px 0 40px; }
-    h1{ font-size:26px; margin-bottom:8px; }
-    p{ color:var(--muted); }
+    section{ margin-bottom:32px; }
 
-    .articlesGrid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-      margin-top:20px;
-    }
-    @media (max-width: 850px){
-      .articlesGrid{ grid-template-columns:1fr; }
-    }
+    h1{ font-size:30px; margin-bottom:8px; }
+    h2{ font-size:22px; color:var(--purple); margin-bottom:10px; }
+    p{ color:var(--muted); margin-bottom:10px; }
 
     .card{
       background: var(--card);
@@ -69,21 +67,41 @@
       padding:16px;
     }
 
-    .tag{
-      display:inline-block;
-      background: var(--yellow);
-      color:#3a2b00;
-      font-size:12px;
-      font-weight:700;
-      padding:4px 8px;
-      border-radius:999px;
-      margin-bottom:6px;
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
     }
-    .meta{
-      font-size:12px;
-      color:var(--muted);
-      margin-bottom:6px;
+    @media (max-width: 850px){
+      .grid3{ grid-template-columns:1fr; }
     }
+
+    .teamGrid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 850px){
+      .teamGrid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .teamGrid{ grid-template-columns:1fr; }
+    }
+
+    .member{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .avatar{
+      width:54px;
+      height:54px;
+      border-radius:10px;
+      border:2px solid var(--yellow);
+      background:#eee;
+    }
+    .member b{ display:block; }
+    .member small{ color:var(--muted); }
 
     footer{
       border-top:1px solid var(--border);
@@ -91,6 +109,62 @@
       color:var(--muted);
       font-size:14px;
     }
+.downloadList{
+  display:grid;
+  gap:12px;
+}
+.downloadItem{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.downloadItem a{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:10px;
+  background: var(--yellow);
+  color:#3a2b00;
+  font-weight:800;
+  font-size:14px;
+}
+.downloadItem a:hover{
+  filter: brightness(0.95);
+}
+.fileMeta{
+  color: var(--muted);
+  font-size:13px;
+}
+
+.socials{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.socials a{
+  display:flex;
+  width:34px;
+  height:34px;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background: rgba(255,255,255,.2);
+}
+
+.socials a:hover{
+  background: rgba(255,255,255,.35);
+}
+
+.socials img{
+  width:18px;
+  height:18px;
+  object-fit:contain;
+}
+
+
+
   </style>
 </head>
 
@@ -98,26 +172,119 @@
 
 <header>
   <div class="container top">
-    <strong>Madibaz Chess Club</strong>
+    <div class="brand">Madibaz Chess Club</div>
     <nav>
-      <a href="index.html">← Back to Home</a>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+<div class="socials">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/madibazchess" target="_blank" aria-label="Instagram">
+    <img src="images/IG.png" alt="Instagram">
+  </a>
+
+ <!-- TikTok -->
+  <a href="https://www.instagram.com/madibazchess" target="_blank" aria-label="Tiktok">
+    <img src="images/tiktok.png" alt="Instagram">
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@madibazchess" target="_blank" aria-label="YouTube">
+    <img src="images/YT.png" alt="YouTube">
+  </a>
+</div>
+
+
+
   </div>
+
 </header>
 
 <main class="container">
-  <h1>Articles</h1>
-  <p>News, tournament reports, and training insights from Madibaz Chess.</p>
 
-  <div class="articlesGrid">
-    <article class="card">
-      <span class="tag">Tournaments</span>
-      <b>FIDE In The Bay — Season Starts Strong</b>
-      <div class="meta">January 2026</div>
-      <p>Madibaz players opened the year with a challenging and rewarding tournament.</p>
-    </article>
+  <section class="card">
+    <h1>Madibaz Chess Club</h1>
+    <p>Training, tournaments, and community chess at Nelson Mandela University.</p>
+  </section>
 
+  <section>
+    <h2>About the Club</h2>
+    <div class="grid3">
+      <div class="card">
+        <b>Training</b>
+        <p>Weekly tactics, endgames, and game reviews.</p>
+      </div>
+      <div class="card">
+        <b>Tournaments</b>
+        <p>Blitz, rapid, and classical events.</p>
+      </div>
+      <div class="card">
+        <b>Community</b>
+        <p>A welcoming environment for all playing levels.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Meet the Executive Committee</h2>
+    <div class="teamGrid">
+      <div class="card member"><div class="avatar"></div><div><b>Kaden Muller</b><small>Chairperson</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Danielle Kettledas</b><small>Vice Chairperson</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Sikhona Sibiya</b><small>Secretary</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Mukhethwa Munyai</b><small>Treasurer</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Lungelo Mdletshe</b><small>Social Media</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Athule Marele</b><small>Marketing</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Jordan Hails</b><small>Logistics</small></div></div>
+      <div class="card member"><div class="avatar"></div><div><b>Vacant</b><small>Logistics and Campus Coordinator</small></div></div>
+    </div>
+  </section>
+
+  <section id="downloads">
+  <h2>Downloads</h2>
+
+  <div class="card">
+    <p>Download official club documents, forms, and resources.</p>
+
+    <div class="downloadList">
+      <div class="downloadItem">
+        <div>
+          <b>Membership Form</b>
+          <div class="fileMeta">PDF • Updated January 2026</div>
+        </div>
+        <a href="downloads/membership-form.pdf" download>Download</a>
+      </div>
+
+      <div class="downloadItem">
+        <div>
+          <b>Club Constitution</b>
+          <div class="fileMeta">PDF</div>
+        </div>
+        <a href="downloads/club-constitution.pdf" download>Download</a>
+      </div>
+
+      <div class="downloadItem">
+        <div>
+          <b>USSA Requirements</b>
+          <div class="fileMeta">PDF</div>
+        </div>
+        <a href="downloads/code-of-conduct.pdf" download>Download</a>
+      </div>
+    </div>
   </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <b>madibazchess@gmail.com</b></p>
+      <p>Venue: Nelson Mandela University, South Campus, Indoor Sport Centre</p>
+    </div>
+  </section>
+
 </main>
 
 <footer>
